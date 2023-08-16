@@ -1,0 +1,39 @@
+{
+  "name": "ikepu-tp/laravel-access-logger",
+  "description": "",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "access",
+    "log"
+  ],
+  "homepage": "https://rainbow-patissier.com",
+  "support": {
+    "issues": "https://github.com/ikepu-tp/laravel-access-logger/issues",
+    "source": "https://github.com/ikepu-tp/laravel-access-logger"
+  },
+  "require": {
+    "php": "^8.2",
+    "laravel/framework": "^10.8",
+    "jenssegers/agent": "^2.6"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "ikepu_tp\\AccessLogger\\": "./src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Yuma Ikeda",
+      "email": "programing@rainbow-patissier.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ikepu_tp\\AccessLogger\\AccessLoggerServiceProvider"
+      ]
+    }
+  }
+}
