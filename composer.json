@@ -1,6 +1,6 @@
 {
   "name": "ikepu-tp/laravel-access-logger",
-  "description": "",
+  "description": "This library stores user access logs in Laravel. You can choose between log files and databases for storage.",
   "type": "library",
   "keywords": [
     "laravel",
