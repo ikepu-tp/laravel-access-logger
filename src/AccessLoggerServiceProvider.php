@@ -21,6 +21,7 @@ class AccessLoggerServiceProvider extends ServiceProvider
     {
         $this->registerPublishing();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadViewsFrom(__DIR__ . "/resources/views", "AccessLogger");
     }
 
     /**
@@ -33,5 +34,14 @@ class AccessLoggerServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/config/access-logger.php' => base_path('config/access-logger.php'),
         ], 'AccessLogger-config');
+
+        $this->publishView();
+    }
+
+    private function publishView(): void
+    {
+        $this->publishes([
+            __DIR__ . '/resources/views' => resource_path('views/vendor/AccessLogger'),
+        ], 'AccessLogger-views');
     }
 }
