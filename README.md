@@ -1,7 +1,6 @@
 # Laravel Access Logger
 
-This library stores user access logs in Laravel.
-You can choose between log files and databases for storage.
+This library stores user access logs in Laravel. You can choose between log files and databases for storage.
 
 ## How to use
 
@@ -26,7 +25,6 @@ You can choose between log files and databases for storage.
     'replace_placeholders' => true,
 ],
 ```
-
 
 ## Contributing
 
