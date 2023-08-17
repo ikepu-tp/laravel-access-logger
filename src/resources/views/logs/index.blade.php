@@ -18,7 +18,7 @@
         <tbody>
           @foreach ($logs as $log)
             <tr>
-              <td>{{ $log->id }}</td>
+              <td>{{ number_format($log->id) }}</td>
               <td>
                 {{ $log->key }}</td>
               <td>
