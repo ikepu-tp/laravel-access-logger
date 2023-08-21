@@ -14,6 +14,7 @@ This library stores user access logs in Laravel. You can choose between log file
 5. Configure except which is used to store request bodies(`$request->input()`) as `array`.
     This will be set `$request->except()`.
 6. Add `\ikepu_tp\AccessLogger\app\Http\Middleware\AccessLoggerMiddleware::class` to `Kernel.php`.
+7. Add `Route::resource("logs", ikepu_tp\AccessLogger\app\Http\Controllers\LogController::class)->names("accessLogger")->only(["index",]);` to `/route/web.php` if your admin want to see logs of all users. (This view shows all logs of all users. So DO NOT show for no-admin users.)
 
 ### example of `logging.php`
 
