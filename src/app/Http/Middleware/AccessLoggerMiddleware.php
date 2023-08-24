@@ -41,7 +41,7 @@ class AccessLoggerMiddleware
     protected $log_request;
 
     /**
-     * @var \Symfony\Component\HttpFoundation\Response $response
+     * @var \Symfony\Component\HttpFoundation\Response|\Illuminate\Http\Response $response
      */
     protected $response;
 
@@ -198,8 +198,8 @@ class AccessLoggerMiddleware
         $original = $this->response->original;
         if ($original instanceof View)
             $resource = [
-                "data" => $original->getData(),
-                "view" => $original->view,
+                //"data" => $original->getData(),
+                "view" => $original->getName(),
                 "path" => $original->getPath(),
             ];
         if (is_array($original)) $resource = $original;
