@@ -16,6 +16,7 @@ use ikepu_tp\AccessLogger\app\Models\Log_info;
 use ikepu_tp\AccessLogger\app\Models\Log_request;
 use ikepu_tp\AccessLogger\app\Models\Log_response;
 use ikepu_tp\AccessLogger\app\Models\Log_server;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class AccessLoggerMiddleware
 {
@@ -195,6 +196,10 @@ class AccessLoggerMiddleware
     public function createLogResponse(): array
     {
         $resource = null;
+        if ($this->response instanceof BinaryFileResponse) return [
+            "status_code" => $this->response->getStatusCode(),
+            "resources" => $this->response->getFile()->getPathname()
+        ];
         $original = $this->response->original;
         if ($original instanceof View)
             $resource = [
